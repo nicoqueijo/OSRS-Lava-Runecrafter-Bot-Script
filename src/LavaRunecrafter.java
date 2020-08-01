@@ -27,7 +27,7 @@ public class LavaRunecrafter extends AbstractScript {
      * Equipment: Fire tiara, Graceful cape, Binding necklace, Mist battlestaff, Gracefultop,
      * Graceful legs, Tome of fire, Graceful gloves, Graceful boots, Ring of dueling
      * <p>
-     * Inventory: Earth runes, Large pouch, medium pouch, Small pouch,
+     * Inventory: Earth runes, Giant pouch, Large pouch
      * Rune pouch (Cosmic runes, Astral runes)
      * <p>
      * Spellbook: Ancient
@@ -73,7 +73,6 @@ public class LavaRunecrafter extends AbstractScript {
         nodes.add(new WalkToRuinNode(this));
         nodes.add(new RunecraftNode(this));
     }
-
 
 
     @Override

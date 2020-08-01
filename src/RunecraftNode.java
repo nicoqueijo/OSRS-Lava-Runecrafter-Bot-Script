@@ -36,9 +36,8 @@ public class RunecraftNode extends Node {
     public int execute() {
         main.logExecution(getClass().getSimpleName());
         main.state = LavaRunecrafter.State.RUINS;
+        final int GIANT_POUCH_ID = 5514;
         final int LARGE_POUCH_ID = 5512;
-        final int MEDIUM_POUCH_ID = 5510;
-        final int SMALL_POUCH_ID = 5509;
         final int EARTH_RUNE_ID = 557;
         final int ALTAR_ID = 34764;
         final Tile TILE_NEXT_TO_ALTAR = new Tile(2582, 4840, 0);
@@ -61,11 +60,9 @@ public class RunecraftNode extends Node {
         sleepUntil(() -> !main.getInventory().isFull(), random(1000, 1500));
         sleep(300, 500);
         main.getKeyboard().pressShift();
+        main.getInventory().get(GIANT_POUCH_ID).interact();
+        sleep(150, 200);
         main.getInventory().get(LARGE_POUCH_ID).interact();
-        sleep(150, 200);
-        main.getInventory().get(MEDIUM_POUCH_ID).interact();
-        sleep(150, 200);
-        main.getInventory().get(SMALL_POUCH_ID).interact();
         sleep(150, 200);
         main.getKeyboard().releaseShift();
         sleep(150, 200);

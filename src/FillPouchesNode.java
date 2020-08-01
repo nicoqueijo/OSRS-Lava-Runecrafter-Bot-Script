@@ -1,4 +1,3 @@
-import static org.dreambot.api.methods.Calculations.random;
 import static org.dreambot.api.methods.MethodProvider.sleep;
 
 /**
@@ -18,14 +17,11 @@ public class FillPouchesNode extends Node {
     @Override
     public int execute() {
         main.logExecution(getClass().getSimpleName());
+        final int GIANT_POUCH_ID = 5514;
         final int LARGE_POUCH_ID = 5512;
-        final int MEDIUM_POUCH_ID = 5510;
-        final int SMALL_POUCH_ID = 5509;
+        main.getInventory().interact(GIANT_POUCH_ID, "Fill");
+        sleep(100, 150);
         main.getInventory().interact(LARGE_POUCH_ID, "Fill");
-        sleep(100, 150);
-        main.getInventory().interact(MEDIUM_POUCH_ID, "Fill");
-        sleep(100, 150);
-        main.getInventory().interact(SMALL_POUCH_ID, "Fill");
         sleep(100, 150);
         main.isPouchFull = true;
         return main.sleepTime();

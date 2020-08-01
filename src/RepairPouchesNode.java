@@ -22,10 +22,10 @@ public class RepairPouchesNode extends Node {
 
     @Override
     public boolean validate() {
+        final int BROKEN_GIANT_POUCH_ID = 5515;
         final int BROKEN_LARGE_POUCH_ID = 5513;
-        final int BROKEN_MEDIUM_POUCH_ID = 5511;
         return main.getInventory().contains(item ->
-                (item.getID() == BROKEN_MEDIUM_POUCH_ID ||
+                (item.getID() == BROKEN_GIANT_POUCH_ID ||
                         item.getID() == BROKEN_LARGE_POUCH_ID));
     }
 
@@ -55,15 +55,12 @@ public class RepairPouchesNode extends Node {
     }
 
     private void rearrangePouches() {
+        final int GIANT_POUCH_ID = 5514;
         final int LARGE_POUCH_ID = 5512;
-        final int MEDIUM_POUCH_ID = 5510;
-        final int SMALL_POUCH_ID = 5509;
-        final int LARGE_POUCH_TARGET_SLOT = 4;
-        final int MEDIUM_POUCH_TARGET_SLOT = 8;
-        final int SMALL_POUCH_TARGET_SLOT = 12;
+        final int GIANT_POUCH_TARGET_SLOT = 4;
+        final int LARGE_POUCH_TARGET_SLOT = 8;
+        dragItem(GIANT_POUCH_ID, GIANT_POUCH_TARGET_SLOT);
         dragItem(LARGE_POUCH_ID, LARGE_POUCH_TARGET_SLOT);
-        dragItem(MEDIUM_POUCH_ID, MEDIUM_POUCH_TARGET_SLOT);
-        dragItem(SMALL_POUCH_ID, SMALL_POUCH_TARGET_SLOT);
     }
 
     private void dragItem(int itemId, int targetSlot) {
