@@ -31,7 +31,7 @@ public class DepositRunesNode extends Node {
         main.adjustCamera(LavaRunecrafter.State.BANK);
         if (!main.getBank().isOpen()) {
             main.getMouse().click(main.getBank().getClosestBank(BankType.CHEST));
-            sleep(random(450, 500));
+            sleep(random(250, 300));
         }
         sleepUntil(() -> main.getBank().isOpen(), random(1000, 1500));
         main.getBank().depositAll(LAVA_RUNE_ID);
@@ -42,17 +42,9 @@ public class DepositRunesNode extends Node {
         if (main.getWalking().getRunEnergy() < 15) {
             int breakLength = random(170, 175) * 1000;
             logInfo("Restoring energy at " + main.timer.formatTime());
+            sleep(3000, 7000);
+            main.getMouse().moveMouseOutsideScreen();
             sleep(breakLength);
-        } else {
-            int random = random(125);
-            if (random == 0) {
-                logInfo("Taking break #" + (++main.breaksTaken) + " at " + main.timer.formatTime());
-                sleep(6000, 10000);
-                main.getMouse().moveMouseOutsideScreen();
-                int oneMinute = 1000 * 60;
-                int threeMinutes = 1000 * 60 * 3;
-                sleep(oneMinute, threeMinutes);
-            }
         }
     }
 }

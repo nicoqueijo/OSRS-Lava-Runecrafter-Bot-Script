@@ -43,14 +43,14 @@ public class RunecraftNode extends Node {
         final Tile TILE_NEXT_TO_ALTAR = new Tile(2582, 4840, 0);
         main.getWalking().walk(TILE_NEXT_TO_ALTAR);
         main.adjustCamera(LavaRunecrafter.State.RUINS);
-        sleep(150, 200);
+        sleep(50, 75);
         boolean spellCasted = main.getMagic().castSpell(Lunar.MAGIC_IMBUE);
         sleepUntil(() -> spellCasted, random(1000, 1500));
         main.getTabs().openWithFKey(Tab.INVENTORY);
         sleep(25, 50);
         main.getMouse().move(main.getInventory().slotBounds(0));
         sleepUntil(() -> main.getTabs().isOpen(Tab.INVENTORY), random(1000, 1500));
-        sleep(1000, 1250);
+        sleep(850, 950);
         boolean runesCrafter = main.getInventory().get(EARTH_RUNE_ID).useOn(main.getGameObjects().closest(ALTAR_ID));
         if (!runesCrafter) {
             main.getInventory().deselect();
